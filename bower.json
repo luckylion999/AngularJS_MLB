@@ -1,0 +1,24 @@
+{
+  "name": "3pak-web",
+  "description": "3pak4tehweb",
+  "main": "index.html",
+  "license": "ISC",
+  "homepage": "https://github.com/GitwitCreative/3pak-web",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.9",
+    "angular-ui-router": "~0.2.17",
+    "jquery": "~2.2.0",
+    "Framework7": "framework7#~1.4.0",
+    "font-awesome": "fontawesome#~4.5.0",
+    "add-to-homescreen": "add-to-homescreen#3.2.2"
+  }
+}

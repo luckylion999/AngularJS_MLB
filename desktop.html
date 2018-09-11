@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3Pak</title>
+    <style>
+        body {
+            background-size: cover;
+            background: url('/dist/images/3pak-field.png') no-repeat center;
+            height: 100vh;
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+        }
+
+        iframe {
+            width: 414px;
+            height: 736px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            outline: none;
+            border: solid 1px white;
+        }
+    </style>
+   <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("771665141");
+   </script>
+
+</head>
+<body>
+    <iframe class="appFrame" id="main-app-frame"></iframe>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        //  temporary
+         var getUrlParameter = function(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+        var customerId = getUrlParameter('play');
+        var indexUrl= 'index.html?play='+customerId;
+        if(window.outerWidth <= 414 && window.outerHeight <= 736) {
+            var customerId = getUrlParameter('play');
+            window.location.href = indexUrl;
+        }
+        (function () {
+            // set html css style inside iframe - remove scrollbar
+            document.getElementById('main-app-frame').src = indexUrl;
+            $('.appFrame').load(function () {
+                $('.appFrame').contents().find('html').css('overflow', 'hidden');
+            });
+        }());
+    </script>
+</body>
+</html>

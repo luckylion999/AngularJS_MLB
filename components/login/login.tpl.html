@@ -1,0 +1,43 @@
+<div class="login controller">
+    <pak-toolbar></pak-toolbar>
+    <div class="page">
+        <div class="container">
+            <h1 class="color-1">Welcome Back!</h1>
+            <p class="info">Log into your account below to see what you've been missing.</p>
+
+            <form ng-submit="login.authenticate()">
+                <input class="input-name" ng-model="login.username" placeholder="Username" autocapitalize="off" autocorrect="off" autocomplete="off">
+                <input class="input-password" ng-model="login.password" type="password" placeholder="Password" autocomplete="off">
+                <input type="submit" class="hidden">
+            </form>
+
+            <ul class="fine-print">
+                <li><a href="https://s3-us-west-2.amazonaws.com/3pak/rules.html" target="_blank">Rules</a></li>
+                <li><a href="https://s3-us-west-2.amazonaws.com/3pak/toc.html" target="_blank">Terms</a></li>
+                <li><a href="https://s3-us-west-2.amazonaws.com/3pak/privacy-policy.html" target="_blank">Privacy</a></li>
+            </ul>
+
+            <div class="floating-button color-2-fill" ng-click="login.authenticate()">
+                <p>Log In</p>
+            </div>
+
+            <div class="login">
+                <a ui-sref="register" class="color-2">Create an account</a>
+            </div>
+
+            <!-- <div class="forgot">
+                <a ui-sref="forgot" class="color-2">Forgot Password?</a>
+            </div> -->
+            
+            <div class="forgot">
+                <a onclick="openWindow();" class="color-2">Forgot Password?</a>
+            </div>
+
+            <script language="JavaScript">
+                function openWindow() {
+                   window.open("http://2017.3pakapi.net/password_reset/", "ModalPopUp", "Change Password", "resizable,scrollbars,status"); 
+                }
+            </script>            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+.splash-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 666;
+  text-align: center;
+
+  img.brand {
+    margin-top: 80px;
+    width: 80%;
+    @media screen and (max-width: $iphone-6) {
+        margin-top: 60px;
+        width: 50%;
+    }
+    @media screen and (max-width: $iphone-5) {
+        margin-top: 40px;
+        width: 50%;
+    }
+  }
+
+  h2 {
+    font-weight: 400;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: black;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .from {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+
+    p {
+      text-transform: uppercase;
+      font-size: 10px;
+      margin-bottom: 0;
+    }
+
+
+    svg {
+      width: 200px;
+    }
+  }
+}

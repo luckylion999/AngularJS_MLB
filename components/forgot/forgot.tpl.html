@@ -1,0 +1,24 @@
+<div class="forgot controller">
+    <pak-toolbar></pak-toolbar>
+    <div class="page">
+        <div class="container">
+            <h1 class="color-1">Change Password</h1>
+            <p class="info">Complete the fields below.</p>
+
+            <form ng-submit="forgot.authenticate()">
+                <input class="input-name" ng-model="forgot.username" placeholder="Username" autocapitalize="off" autocorrect="off" autocomplete="off">
+                <input class="input-password" ng-model="forgot.password" type="password" placeholder="Password" autocomplete="off">
+                <input class="input-confirm-password" ng-model="forgot.confirm_password" type="password" placeholder="Confirm Password" autocomplete="off">
+                <input type="submit" class="hidden">
+            </form>
+
+            <div class="floating-button color-2-fill" ng-click="forgot.authenticate()">
+                <p>Change Password</p>
+            </div>
+
+            <div class="login">
+                <a ui-sref="login" class="color-2">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>

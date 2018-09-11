@@ -1,0 +1,46 @@
+$nav-button-height: 60px;
+
+.controller {
+  .nav-button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    
+    & > div {
+      box-sizing: border-box;
+      margin-top: 1px;
+      height: $nav-button-height;
+      border-top: solid 1px rgba(white, 0.5);
+      padding-top: 20px;
+      position: relative;
+
+      &.faded {
+        background: #CCC;
+
+        &:after {
+          content: none;
+        }
+      }
+
+      &:after {
+        content: '\f0da';
+        font-family: 'FontAwesome';
+        display: block;
+        font-size: 28px;
+        position: absolute;
+        right: 20px;
+        top: 16px;
+      }
+
+      &:first-child {
+        border-top: none;
+        margin-top: 0;
+      }
+    }
+  }
+}

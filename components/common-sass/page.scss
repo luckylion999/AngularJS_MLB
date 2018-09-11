@@ -1,0 +1,41 @@
+.controller {
+  position: relative;
+
+  .page {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: $nav-button-height;
+    background: white;
+    color: black;
+    overflow: hidden;
+
+    .container {
+      text-align: center;
+      width: 85%;
+      margin: auto;
+      min-height: 100vh;
+
+      & > h1 {
+        text-transform: uppercase;
+        font-family: 'Oswald', sans-serif;
+        font-size: 60px;
+        margin: 0;
+        text-shadow: 3px 4px 1px #CCC;
+
+        @media screen and (max-width: $iphone-6-plus - 1) {
+          font-size: 47px;
+        }
+
+        @media screen and (max-width: $iphone-6 - 1) {
+          font-size: 37px;
+        }
+      }
+
+      & > .info {
+        font-size: 13px;
+      }
+    }
+  }
+}

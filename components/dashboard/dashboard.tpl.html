@@ -1,0 +1,90 @@
+<div class="dashboard controller">
+    <div class="ad">
+        <div class="ad1">
+                <a class="testa" target="_blank" style="text-decoration: none" href="{{dashboard.advertisement_uri}}"><img class="nosmurf" ng-src="{{dashboard.advertisement}}"></a>
+        </div>
+        <div class="ad2">
+                <a class="testb" target="_blank" style="text-decoration: none" href="{{dashboard.advertisement_uri_2}}"><img class="smurf" ng-src="{{dashboard.advertisement_2}}"></a>
+        </div>
+    </div>
+    <div class="blackout" ng-class="{active: dashboard.menuOpen}">&nbsp;</div>
+    <div class="dropdown" ng-class="{active: dashboard.menuOpen}">
+        <a class="menu" title="Menu" ng-click="dashboard.menuOpen = !dashboard.menuOpen">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+        </a>
+        <div class="topnav color-2-fill">
+            <ul>
+                <li ng-click="dashboard.show('rules')">Contest Rules</li>
+                <li ng-click="dashboard.show('terms')">Terms &amp; Conditions</li>
+                <li ng-click="dashboard.show('policy')">Privacy Policy</li>
+                <li ng-click="dashboard.show('feedback')">Feedback</li>
+                <li ng-click="dashboard.show('contact')">Contact</li>
+                <li ng-click="dashboard.logOut()">Log Out</li>
+            </ul>
+        </div>
+    </div>
+    <div class="week">
+        <div>WEEK {{ dashboard.weeks }}</div>
+    </div>
+    <div class="current-pak">
+        <div class="picks">
+            <div class="pick-container" ng-repeat="pick in dashboard.picks track by $index">
+                <div    class="pick"
+                        ng-class="{set: !!pick, removable: !!pick && !pick.locked}"
+                        style="background-image: url({{ pick.PhotoUrl }}); background-color: {{ ::pick.color }};">
+                </div>
+                <div class="top" ng-if="!!pick">
+                    <div class="position">{{ pick.Position || 'D' }}</div>
+                    <div class="name">{{ ::pick.displayName }}</div>
+                    <div class="salary">{{ ::pick.FanDuelSalary | currency : '$' : 0 }}</div>
+                </div>
+                <div class="bottom" ng-if="!!pick">
+                    <span class="ppg">{{ ::pick.score }} Pts. |</span>
+                    <span class="game">{{ ::pick.Team }}@{{ ::pick.Opponent }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="score">
+            <div class="points">
+                <span>Points: </span>
+                <strong>{{ ::dashboard.score }}</strong>
+            </div>
+            <div class="place">
+                <span>Place: </span>
+                <strong>{{ ::dashboard.place }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="competitor-list">
+        <div class="competitor" ng-repeat="competitor in dashboard.competitors track by competitor.user_id" ng-class="{me: competitor.pak_id === dashboard.pakId}">
+            <p class="position color-1">{{ ::competitor.position }}</p>
+            <div class="user-info">
+                <label for="pict" class="username">{{ ::competitor.username }} </label>&nbsp;
+                <span ng-repeat="(name, val) in ::competitor.badges">
+                    <img
+                    ng-if="name=='repeat_user'"
+                    src="{{ ::dashboard.url + val }}" 
+                    class="removed_spin" 
+                    style="height : 15px;" 
+                    alt="" 
+                    >
+                    <img
+                    ng-if="name!='repeat_user'"
+                    src="{{ ::dashboard.url + val }}" 
+                    style="height : 15px;" 
+                    alt="" 
+                    >
+                   </span>
+                <p class="points">Total Points: {{ ::competitor["total pts"] }}</p>
+            </div>
+        </div>
+        <div class="competitor empty" ng-if="!dashboard.competitors.length">
+            <div class="user-info">
+                <p class="username">No competitor information available</p>
+            </div>
+        </div>
+    </div>
+    <pak-nav-button buttons="dashboard.navButtons"></pak-nav-button>
+</div>

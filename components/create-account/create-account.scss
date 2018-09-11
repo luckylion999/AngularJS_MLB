@@ -1,0 +1,213 @@
+.create-account.controller {
+  position: static;
+
+  .page {
+    bottom: 0;
+
+    @media screen and (max-width: $iphone-6 - 1) {
+      padding-top: 0;
+    }
+
+    .container {
+      @media screen and (max-width: $iphone-6 - 1) {
+        width: 90%;
+      }
+      h1 {
+        @media screen and (max-width: $iphone-5) {
+          font-size: 38px;
+        }
+      }
+    }
+  }
+
+  .logo-container {
+    width: 80%;
+    margin: 20% auto 40px auto;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .prizes {
+    width: 100%;
+    margin: 0 auto;
+    clear: both;    // changed by joseph
+
+    @media screen and (max-width: $iphone-6-plus) {
+      margin: 5px auto 0 auto;
+    }
+
+    @media screen and (max-width: $iphone-5) {
+      margin: 5px auto 0 auto;
+    }
+
+    & > div {
+      //width: 33%;
+      width: 33.333333%;  // changed by joseph
+      float:left;         // changed by joseph
+      box-sizing: border-box;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      color: #666;
+
+      .image-holder {
+        text-align: center;
+
+        img {
+          max-width: 100%;
+          height: 50px;
+
+          @media screen and (max-width: $iphone-6-plus - 1) {
+            height: 30px;
+          }
+        }
+      }
+
+      p {
+        padding: 0 5px;
+        font-size: 11px;
+
+        @media screen and (max-width: $iphone-5) {
+          margin-top: 0px;
+          margin-bottom: 3px;
+        }
+        &.label {
+          font-size: 13px;
+          padding-top: 0;
+          margin-top: 0;
+          @media screen and (max-width: $iphone-5) {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    margin: 0;
+    white-space: pre;
+    clear:both; // changed by joseph
+    @media screen and (max-width: $iphone-5) {
+      font-size:12px;
+    }
+  }
+
+  .form {
+    margin: 15px auto;
+
+    @media screen and (max-width: $iphone-6-plus - 1) {
+      margin: 10px auto;
+    }
+
+    @media screen and (max-width: $iphone-5) {
+      margin: 7px auto;
+    }
+
+    input {
+      display: block;
+      outline: none;
+      border: solid 1px #999;
+      height: 40px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 14px;
+      border-radius: 5px;
+
+      @media screen and (max-width: $iphone-6-plus - 1) {
+        height: 35px;
+      }
+
+      @media screen and (max-width: $iphone-5) {
+        height: 30px;
+      }
+
+      &.hidden {
+        display: none;
+      }
+
+      &.input-name {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: none;
+      }
+
+      &.input-email {
+        border-radius: 0;
+      }
+
+      &.input-password {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        border-top: none;
+      }
+    }
+  }
+
+  .fine-print {
+    font-size: 12px;
+    margin-top: 0;
+    list-style: none;
+    margin-left: -20px;
+    font-weight: 700;
+    overflow: auto;
+
+    @media screen and (max-width: $iphone-6 - 1) {
+      margin-left: -40px;
+    }
+
+    @media screen and (max-width: $iphone-5) {
+      margin-bottom: 0px;
+    }
+
+    li {
+      float: left;
+      width: 33%;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+
+  .floating-button {
+    width: 100%;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    border-radius: 8px;
+    overflow: auto;
+    color: white;
+    cursor: pointer;
+
+    @media screen and (max-width: $iphone-6) {
+      margin: 0px auto 0 auto;
+    }
+
+    @media screen and (max-width: $iphone-5) {
+      margin: 5px auto 0 auto;
+    }
+
+    p {
+      margin: 10px;
+
+      @media screen and (max-width: $iphone-5) {
+        margin: 7px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .login {
+    margin-top: 20px;
+    font-size: 13px;
+
+    @media screen and (max-width: $iphone-6) {
+      margin-top: 5px;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}

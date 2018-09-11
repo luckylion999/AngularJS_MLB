@@ -1,0 +1,40 @@
+.pak-dialog-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(black, 0.7);
+  display: none;
+
+  .modal {
+    box-sizing: border-box;
+    width: 80%;
+    background: white;
+    color: black;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 0.8em;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    p {
+
+    }
+
+    .button {
+      border-top: solid 1px #EEE;
+      color: blue;
+      font-weight: bold;
+      padding-top: 10px;
+      cursor: pointer;
+    }
+  }
+}

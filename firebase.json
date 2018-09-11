@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": ".",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "ignore": [
+        ".sass-cache",
+        "firebase.json",
+        "*.log",
+        "**/.*",
+        "**/node_modules/**",
+        "images/**"
+    ]
+  }
+}

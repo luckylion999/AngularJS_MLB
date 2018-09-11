@@ -1,0 +1,31 @@
+$iphone-5: 320px;
+$iphone-6: 375px;
+$iphone-6-plus: 414px;
+$iphone-6-plus-max: $iphone-6-plus - 1;
+$iphone-6-max: $iphone-6 - 1;
+
+body {
+  display: none;
+  background-repeat: no-repeat;
+  background-size: 120vw 100vh;
+  background-position: -10vw 0;
+  font-family: "Open Sans", "Calibri", "Helvetica", "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+@import url("../bower_components/font-awesome/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:700");
+@import "common-sass/toolbar";
+@import "common-sass/nav-button";
+@import "create-account/create-account";
+@import "pak-dialog-box/pak-dialog-box";
+@import "splashscreen/splashscreen";
+@import "draft-pak/draft-pak";
+@import "confirmation/confirmation";
+@import "challenge/challenge";
+@import "common-sass/page";
+@import "dashboard/dashboard";
+@import "age-check/age-check";
+@import "login/login";
+@import "rule/rule";
+@import "forgot/forgot";

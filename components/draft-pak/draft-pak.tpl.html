@@ -1,0 +1,89 @@
+<div class="draft-pak controller">
+    <pak-toolbar title="Draft Pak"></pak-toolbar>
+    <div class="current-pak">
+        <div class="picks">
+            <div    class="pick"
+                    ng-repeat="pick in game.picks track by $index"
+                    ng-class="{set: !!pick, removable: !!pick && !pick.locked}"
+                    style="background-image: url({{ pick.PhotoUrl }}); background-color: {{ pick.color }};">                
+                <div class="remove-button" ng-hide="pick.locked" ng-click="game.removePick(pick)"></div>
+            </div>
+        </div>
+        <div class="budget">
+            <div class="sub-title">Remaining Salary </div>
+            <div class="amount">{{ game.remainingSalary | currency : '$' : 0 }}</div>
+        </div>
+    </div>
+    <div class="window_open" ng-show="game.is_window_open === false">
+        <div class="modal">
+            <p>Player selection will resume on Wednesday</p>
+            <p class="countdown"></p>
+            <div id="clockdiv">
+              <div>
+                <span class="days"></span>
+                <div class="smalltext">Days</div>
+              </div>
+              <div>
+                <span class="hours"></span>
+                <div class="smalltext">Hours</div>
+              </div>
+              <div>
+                <span class="minutes">{{ game.mins_until_open }}</span>
+                <div class="smalltext">Minutes</div>
+              </div>
+              <div>
+                <span class="seconds"></span>
+                <div class="smalltext">Seconds</div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="search-bar" ng-class="{'showing-search': game.showingSearch}" ng-hide="game.is_window_open != true">
+        <div class="search-section">
+            <div class="search button" ng-click="game.toggleSearch()">
+                <span class="fa" ng-class="{'fa-chevron-left': game.showingSearch, 'fa-search': !game.showingSearch}"></span>
+            </div>
+            <div class="search-input">
+                <input type="search" ng-model="game.query" ng-model-options="{debounce: 500}" ng-change="game.search()" placeholder="Search" autocomplete="off">
+            </div>
+        </div>
+        <select class="filters" ng-model="game.filter" ng-change="game.applyFilter()" ng-hover="game.applyFilter()">
+            <option value="all">All Positions</option>
+            <option value="{{ position.value }}" ng-repeat="position in game.playerPositions">{{ position.text }}</option>
+            
+        </select>
+    </div>
+    <div class="player-list" ng-hide="game.is_window_open != true">
+        <div class="player" ng-repeat="player in game.players track by player.PlayerID">
+            <div class="mugshot" style="background-image: url({{ ::player.PhotoUrl }}); background-color: {{ ::player.color }};"></div>
+            <div class="stats">
+                <div class="top">
+                    <div class="position">{{ ::player.Position || 'D' }}</div>
+                    <div class="name">{{ ::player.displayName }}</div>
+                    <div class="salary">{{ ::player.FanDuelSalary | currency : '$' : 0 }}</div>
+                </div>
+                <div class="bottom">
+                    <span class="ppg">{{ ::player.FantasyPointsFanDuel }} PPG |</span>
+                    <span class="away-team" ng-class="{ from: player.fromAway || player.isAway }">{{ ::player.Team }}</span>
+                    <span class="home-team">@ <span ng-class="{ from: player.fromHome || player.isHome }">{{ ::player.Opponent }}</span></span>
+                </div>
+            </div>
+            <div    class="action-button"
+                    ng-class="{draft: !player.teamRule && !player.drafted, remove: player.drafted, locked: player.locked}"
+                    ng-click="game.playerAction(player)">
+
+                <span ng-show="!player.drafted && !player.locked">Draft</span>
+                <span ng-show="game.isDrafted(player)">Remove</span>
+                <span ng-show="player.locked">Locked</span>
+            </div>
+        </div>
+
+        <div class="no-player" ng-if="game.players.length ==0 ">
+            <p>{{game.playerMsg}}</p>
+        </div>
+
+        <pak-scroll-spy action="game.showMorePlayers()"></pak-scroll-spy>
+    </div>
+    <pak-nav-button buttons="game.navButtons" ng-hide="game.is_window_open != true"></pak-nav-button>
+</div>

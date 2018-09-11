@@ -1,0 +1,54 @@
+<div class="create-account controller">
+    <pak-toolbar></pak-toolbar>
+    <div class="page">
+        <div class="container">
+            <h1 class="color-1">Play &amp; Win!</h1>
+            <div class="prizes">
+                <div class="top-10">
+                    <p class="label">{{ register.prize1.topText }}</p>
+                    <div class="image-holder">
+                        <img ng-src="{{ register.prize1.imageUrl }}">
+                    </div>
+                    <p>{{ register.prize1.text }}</p>
+                </div>
+                <div class="top-40">
+                    <p class="label">{{ register.prize2.topText }}</p>
+                    <div class="image-holder">
+                        <img ng-src="{{ register.prize2.imageUrl }}">
+                    </div>
+                    <p>{{ register.prize2.text }}</p>
+                </div>
+                <div class="everyone">
+                    <p class="label">{{ register.prize3.topText }}</p>
+                    <div class="image-holder">
+                        <img ng-src="{{ register.prize3.imageUrl }}">
+                    </div>
+                    <p>{{ register.prize3.text }}</p>
+                </div>
+            </div>
+            <p class="info">{{ register.promoBlurb }}</p>
+            <div class="form">
+                <form name="register.orm" ng-submit="register.createUser()">
+                    <input class="input-name" type="text" ng-model="register.user.username" placeholder="Nickname" autocomplete="off">
+                    <input class="input-email" ng-hide="register.hideEmail" type="text" ng-model="register.user.email" placeholder="Email" autocomplete="off" autocapitalize="off">
+                    <input class="input-password" type="password" ng-model="register.user.password" placeholder="Password" autocomplete="off">
+                    <input type="submit" class="hidden">
+                </form>
+            </div>
+
+            <ul class="fine-print">
+                <li><a href="https://s3-us-west-2.amazonaws.com/3pak/rules.html" target="_blank">Rules</a></li>
+                <li><a href="https://s3-us-west-2.amazonaws.com/3pak/toc.html" target="_blank">Terms</a></li>
+                <li><a href="https://s3-us-west-2.amazonaws.com/3pak/privacy-policy.html" target="_blank">Privacy</a></li>
+            </ul>
+
+            <div class="floating-button color-2-fill" ng-click="register.createUser()">
+                <p>Create Account and Draft PAK</p>
+            </div>
+
+            <div class="login">
+                Already have an account? <a ui-sref="login" class="color-2">Log In</a>
+            </div>
+        </div>
+    </div>
+</div>

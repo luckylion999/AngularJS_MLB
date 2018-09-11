@@ -1,0 +1,50 @@
+.controller {
+  .toolbar {
+    overflow: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 700;
+
+    @media screen and (min-width: $iphone-6-plus) {
+      overflow: hidden;   // remove scroll in desktop
+    }
+
+    .title {
+      text-align: center;
+      width: 40%;
+      float: left;
+      height: 58px;
+
+      .brand.logo {
+        max-height: 58px;
+      }
+
+      p {
+        margin-top: 16px;
+      }
+    }
+
+    .button {
+      box-sizing: border-box;
+      width: 30%;
+      float: left;
+      font-size: 0.7em;
+      padding: 10px;
+
+      @media screen and (max-width: $iphone-6 - 1) {
+        font-size: 9px;
+      }
+
+      &.right {
+        text-align: right;
+        padding-top: 20px;
+        cursor: pointer;
+
+        i.fa-info-circle {
+          display: inline-block;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

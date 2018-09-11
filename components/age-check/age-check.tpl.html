@@ -1,0 +1,31 @@
+<div class="age-check controller">
+    <pak-toolbar></pak-toolbar>
+
+    <h1>Hey There!</h1>
+    <p class="info">Thanks for playing {{ age.customerName }} Fantasy Baseball contest. Before we get started, we just need to make sure you're above {{ ::age.minAge }} years of ages. Sorry the lawyers made us do it!</p>
+
+    <div class="birthday">
+        <div class="select-box">
+            <select ng-model="age.month">
+                <option value="" disabled selected>Month</option>
+                <option ng-repeat="month in age.months" value="{{ ::$index + 1 }}">{{ ::month }}</option>
+            </select>
+        </div>
+        <div class="select-box">
+            <select ng-model="age.day">
+                <option value="" disabled selected>Day</option>
+                <option ng-repeat="day in age.days track by $index">{{ ::$index + 1 }}</option>
+            </select>
+        </div>
+        <div class="select-box">
+            <select ng-model="age.year">
+                <option value="" disabled selected>Year</option>
+                <option ng-repeat="year in age.years track by $index">{{ ::2016 - $index }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="floating-button color-2-fill" ng-click="age.validateAge()">
+        <p>Confirm Your Age</p>
+    </div>
+</div>

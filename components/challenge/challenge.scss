@@ -1,0 +1,39 @@
+.challenge.controller {
+  position: static;
+
+  .page {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    bottom: $nav-button-height;
+    background: white;
+    color: black;
+    padding-top: 20px;
+    overflow: hidden;
+    text-align: center;
+
+    @media screen and (max-width: $iphone-6-max) {
+      padding-top: 0;
+    }
+
+    input {
+      display: block;
+      outline: none;
+      border: solid 1px #999;
+      height: 40px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 14px;
+      border-radius: 5px;
+
+      &.hidden {
+        display: none;
+      }
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+  }
+}

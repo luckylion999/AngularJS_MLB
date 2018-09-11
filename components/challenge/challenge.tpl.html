@@ -1,0 +1,17 @@
+<div class="challenge controller">
+    <pak-toolbar></pak-toolbar>
+    <div class="page">
+        <div class="container">
+            <h1 class="color-1">Bring It On!</h1>
+            <p class="info">We all know who's the best; now it's time to prove it! Invite three friends to play and see how you and your friends stack up against the competition!</p>
+
+            <form name="challengeForm">
+                <input type="email" ng-model="challenge.friend1" placeholder="Friend Email #1">
+                <input type="email" ng-model="challenge.friend2" placeholder="Friend Email #2">
+                <input type="email" ng-model="challenge.friend3" placeholder="Friend Email #3">
+                <input type="submit" ng-hide="true">
+            </form>
+        </div>
+    </div>
+    <pak-nav-button buttons="challenge.navButtons"></pak-nav-button>
+</div>

@@ -1,0 +1,75 @@
+.rule-screen {
+
+  min-height: 100vh;
+  padding: 30px;
+  color: black;
+  background-color: white;
+
+  .header {
+    text-align: center;
+  }
+
+  span.number {
+    color: blue;
+    border-radius: 50%;
+    border: 1px solid blue;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: 20px;
+  }
+
+  span.big {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  ul {
+    padding-left: 60px;
+  }
+
+  .center {
+    text-align: center;
+  }
+  
+  .half {
+    width: 49%;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  
+  .blue {
+    color: blue;
+  }
+
+  .bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-left: -30px;
+    border-top: 2px solid grey;
+
+    .right {
+      border-left: 2px solid grey;
+    }
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .floating-button {
+    width: 90%;
+    text-align: center;
+    border-radius: 8px;
+    overflow: auto;
+    margin: 40px auto;
+    left: 5%;
+    cursor: pointer;
+
+    p {
+      margin: 10px;
+    }
+  }
+}

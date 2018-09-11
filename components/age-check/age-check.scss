@@ -1,0 +1,91 @@
+.age-check.controller {
+  min-height: 100vh;
+
+  h1 {
+    width: 80%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    margin: 0 auto;
+    text-shadow: 3px 4px 1px rgba(0, 0, 0, 0.3);
+
+    @media screen and (max-width: 413px) {
+      font-size: 40px;
+    }
+  }
+
+  p.info {
+    width: 75%;
+    margin: 40px auto;
+    font-size: 13px;
+    color: black;
+    text-align: center;
+
+    @media screen and (max-width: 413px) {
+      margin: 20px auto 40px;
+    }
+  }
+
+  .birthday {
+    display: flex;
+    width: 90%;
+    margin: auto;
+
+    @media screen and (max-width: 414px) {
+      display: block;
+    }
+
+    .select-box {
+      padding: 0 5px;
+      width: 33.333%;
+      position: relative;
+      box-sizing: border-box;
+
+      @media screen and (max-width: 414px) {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0;
+      }
+
+      &:first-child {
+        flex-grow: 1;
+      }
+
+      select {
+        -webkit-appearance: none;
+        font-size: 14px;
+        padding: 15px;
+        width: 100%;
+        background: white;
+        border: none;
+      }
+
+      &:after {
+        content: '\f107';
+        font-family: 'FontAwesome';
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        color: #666;
+        font-size: 32px;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .floating-button {
+    width: 90%;
+    text-align: center;
+    border-radius: 8px;
+    overflow: auto;
+    margin: 40px auto;
+    left: 5%;
+    cursor: pointer;
+
+    p {
+      margin: 10px;
+    }
+  }
+}
